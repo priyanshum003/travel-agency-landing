@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.subscription {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  padding: 40px 20px;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .content {
+    z-index: 1;
+    position: relative;
+
+    h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .subscription-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      input {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 400px;
+        outline: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        background-color: #ff6f61;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          background-color: #e65c50;
+        }
+      }
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+
+    i {
+      font-size: 2rem;
+      color: #ff6f61;
+    }
+  }
+
+  // Media Queries for Responsive Design
+
+  // Small screens (mobile)
+  @media (max-width: 768px) {
+    .subscription {
+      padding: 20px;
+
+      .content h2 {
+        font-size: 1.5rem;
+      }
+
+      .subscription-form {
+        flex-direction: column;
+      }
+    }
+  }
+
+  // Medium screens (tablet)
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .subscription {
+      padding: 30px;
+
+      .content h2 {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  // Large screens (desktop)
+  @media (min-width: 1025px) {
+    .subscription {
+      padding: 40px;
+
+      .content h2 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

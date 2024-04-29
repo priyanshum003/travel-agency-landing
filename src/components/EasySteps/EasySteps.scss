@@ -1,0 +1,302 @@
+@import '../../styles/variables';
+
+$icon-color-light: #fff;
+$icon-color-dark: #84829A;
+$icon-background: #F5F5F5;
+$progress-bar-background: #e9ecef;
+$progress-color: #6f42c1;
+$border-radius-small: 5px;
+
+.easy-steps {
+  font-family: $font-family;
+  padding: $padding-xlarge 0;
+  background: $background-color-light;
+
+
+  .container {
+    margin: 0 auto;
+    padding: 0 $padding-large;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $container-max-width;
+
+    .easy-steps__content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $padding-large;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .easy-steps__title {
+      font-size: $font-size-xlarge;
+      color: $text-color;
+      margin-bottom: $padding-large;
+      font-weight: bold;
+      font-family: $heading-font;
+      text-align: center;
+      position: relative;
+      margin : 0 auto;
+
+      &::before {
+        content: 'Easy and Fast';
+        display: block;
+        font-size: $font-size-small;
+        color: $text-color;
+        font-weight: 500;
+        margin-bottom: $padding-small;
+        font-family: $font-family;
+      }
+    }
+
+
+    .content {
+      flex: 1 1 50%;
+      padding: $padding-medium;
+
+      h2 {
+        font-size: $font-size-large;
+        color: $text-secondary-color;
+        margin-bottom: $padding-small;
+      }
+
+      h3 {
+        font-size: $font-size-xlarge;
+        color: $text-color;
+        margin-bottom: $padding-large;
+        line-height: 1.2;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: $padding-medium;
+        width: 95%;
+
+        .step {
+          display: flex;
+          align-items: flex-start;
+          gap: $padding-medium;
+
+          .icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $border-radius;
+
+            svg {
+              width: 30px;
+              height: 30px;
+              color: $icon-color-light;
+            }
+          }
+
+          .step-details {
+            h4 {
+              font-size: $font-size-medium;
+              color: $text-color;
+              margin-bottom: $padding-small;
+            }
+
+            p {
+              font-size: $font-size-medium;
+              color: $text-secondary-color;
+            }
+          }
+        }
+      }
+    }
+
+    .trip-info {
+      flex: 1 1 50%;
+      padding: $padding-medium;
+      display: flex;
+      flex-direction: column;
+      gap: $padding-medium;
+      position: relative;
+      align-items: center;
+
+      .trip-card,
+      .trip-status {
+        background: $background-color;
+        border-radius: $border-radius;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: $padding-medium;
+
+        h4 {
+          font-size: $font-size-medium;
+          color: $text-color;
+          margin-bottom: $padding-small;
+        }
+
+        p {
+          font-size: $font-size-medium;
+          color: $text-secondary-color;
+        }
+
+        .progress-bar {
+          background: $progress-bar-background;
+          border-radius: $border-radius-small;
+          overflow: hidden;
+          height: 10px;
+          margin: $padding-small 0;
+
+          .progress {
+            background: $progress-color;
+            height: 100%;
+          }
+        }
+      }
+
+      .trip-card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: $padding-medium;
+        width: 95%;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius;
+
+        }
+
+        .trip-details {
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+
+      .trip-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .icons {
+          display: flex;
+          gap: $padding-medium;
+          padding: $padding-small 0;
+          // margin: 0 $padding-medium;
+
+          svg {
+            width: 40px;
+            height: 40px;
+            font-size: 10px;
+            color: $text-color;
+            background: $icon-background;
+            padding: 10px;
+            border-radius: 100%;
+          }
+        }
+
+        .people-going {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .heart-icon {
+            font-size: 1.3rem;
+            color: $text-color;
+            margin-right: $padding-small;
+          }
+        }
+
+      }
+
+      .trip-status {
+        display: flex;
+        gap: $padding-small;
+        width: 100%;
+        max-width: 100%;
+        z-index: 1;
+
+        .trip-image {
+          width: 90px;
+          height: 90px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+          }
+        }
+
+        .trip-progress {
+          width: 100%;
+
+          p {
+            color: $text-color;
+          }
+
+          .progress-percentage {
+            font-size: 0.9rem;
+
+            .purple {
+              color: $progress-color;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
+  // Media Queries for Responsive Design
+
+  // Small screens (mobile)
+  @media (max-width: $breakpoint-mobile) {
+    .container {
+      flex-direction: column;
+
+      .content,
+      .trip-info {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  // Medium screens (tablet)
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    .container {
+      flex-direction: column;
+
+      .content,
+      .trip-info {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  // Large screens (desktop)
+  @media (min-width: $breakpoint-desktop) {
+    .container {
+      flex-direction: row;
+
+      .content {
+        flex: 1 1 40%;
+      }
+
+      .trip-info {
+        flex: 1 1 30%;
+      }
+    }
+  }
+}

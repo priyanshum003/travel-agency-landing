@@ -1,0 +1,155 @@
+@import '../../styles/variables';
+
+$icon-color-dark: #84829A;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+.testimonials {
+  font-family: $font-family;
+  background-color: $background-color;
+    padding: $padding-xlarge $padding-large;
+  text-align: center;
+
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-heading {
+    margin-bottom: $padding-large;
+    padding: 0 $padding-medium;
+
+    &::before {
+      content: 'Testimonials';
+      display: block;
+      font-size: $font-size-small;
+      color: $text-secondary-color;
+      font-weight: 500;
+      margin-bottom: $padding-small;
+      font-family: $font-family;
+    }
+
+    h2 {
+      font-size: $font-size-xlarge;
+      color: $text-color;
+      margin-bottom: $padding-small;
+      font-family: $heading-font;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: $text-secondary-color;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .testimonial {
+    background: $background-color;
+    border-radius: $border-radius;
+    padding: $padding-large;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    box-shadow: $box-shadow;
+    margin-bottom: $padding-large;
+
+    .testimonial-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s;
+      padding: $padding-medium;
+      border-radius: $border-radius;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: $padding-medium;
+      }
+
+      p {
+        font-size: 1.125rem;
+        color: $text-secondary-color;
+        margin-bottom: $padding-medium;
+        text-align: center;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        color: $text-color;
+        margin-bottom: 5px;
+      }
+
+      span {
+        font-size: 1rem;
+        color: $text-secondary-color;
+      }
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: $padding-medium;
+
+      button {
+        background: none;
+        color: $text-secondary-color;
+        border: none;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+        cursor: pointer;
+        font-size: 24px;
+        line-height: 15px;
+        padding: 0;
+        transition: background-color $transition;
+
+        &:hover,
+        &.active {
+          background: $primary-color;
+          color: $background-color;
+        }
+      }
+    }
+  }
+
+  // Media Queries for Responsive Design
+  @media (max-width: $breakpoint-mobile) {
+    .container {
+      padding: 0 $padding-medium;
+    }
+
+    .section-heading {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .testimonial {
+      padding: $padding-medium;
+    }
+  }
+
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

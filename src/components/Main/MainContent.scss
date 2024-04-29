@@ -1,0 +1,139 @@
+@import '../../styles/variables';
+
+.main-content {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-xlarge $padding-large;
+    font-family: $font-family;
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    .text-content,
+    .image-content {
+      width: 50%;
+    }
+
+    .text-content {
+      max-width: 600px;
+
+      h2 {
+        color: $primary-color;
+        font-size: $font-size-small;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: $font-size-xxlarge;
+        color: $text-color;
+        line-height: 1.2;
+        margin: $padding-medium 0;
+        font-family: $heading-font;
+      }
+
+      p {
+        color: $text-secondary-color;
+        font-size: $font-size-medium;
+        font-weight: 500;
+        margin: $padding-medium 0;
+        text-align: justify;
+      }
+
+      .buttons {
+        display: flex;
+
+        .find-out-more,
+        .play-demo {
+          padding: $padding-small $padding-medium;
+          font-size: $font-size-medium;
+          border-radius: $border-radius;
+          border: none;
+          cursor: pointer;
+          font-family: inherit;
+        }
+
+        .find-out-more {
+          background: $secondary-color;
+          color: $background-color;
+          margin-right: $padding-medium;
+          padding: $padding-medium $padding-large;
+
+          &:hover {
+            background-color: transparent;
+            color: $secondary-color;
+            transition: $transition;
+            border: 1px solid $secondary-color;
+          }
+        }
+
+        .play-demo {
+          color: $background-color;
+          padding: $padding-medium $padding-large;
+          background-color: $primary-color;
+          border: 1px solid $primary-color;
+
+          &:hover {
+            background-color: transparent;
+            color: $primary-color;
+            transition: $transition;
+          }
+        }
+      }
+    }
+
+    .image-content {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  // Media Queries for Responsive Design
+
+  @media (max-width: $breakpoint-mobile) {
+    .container {
+      flex-direction: column-reverse;
+      .text-content,
+      .image-content {
+        width: 100% !important; // Ensure 100% width takes precedence
+      }
+    }
+
+    .text-content {
+      text-align: center;
+
+      h1 {
+        font-size: $font-size-large;
+      }
+
+      .buttons {
+        flex-direction: column;
+
+        .find-out-more,
+        .play-demo {
+          width: 100%;
+          margin-bottom: $padding-small;
+        }
+      }
+    }
+
+    .image-content {
+      margin-top: $padding-medium;
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile + 1) and (max-width: $breakpoint-tablet) {
+    .text-content {
+      h1 {
+        font-size: $font-size-large;
+      }
+    }
+  }
+}
+
+// tablet only 
+// @media (min-width: $breakpoint-mobile + 1) and (max-width: $breakpoint-tablet) {
+
+

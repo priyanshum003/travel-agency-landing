@@ -1,0 +1,113 @@
+@import '../../styles/variables';
+
+.category {
+  font-family: $font-family;
+  padding: $padding-xlarge 0;
+  text-align: center;
+  background-color: #f9f9f9;
+
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $padding-large;
+
+    .category__title {
+      font-size: $font-size-large;
+      color: $text-color;
+      margin-bottom: $padding-large;
+      font-weight: bold;
+      font-family: $heading-font;
+
+      &::before {
+        content: 'Category';
+        display: block;
+        font-size: $font-size-small;
+        color: $text-color;
+        font-weight: 500;
+        margin-bottom: $padding-small;
+      }
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: $padding-medium;
+
+      .service {
+        background: $background-color;
+        border-radius: $border-radius;
+        padding: $padding-medium;
+        margin: $padding-small;
+        text-align: center;
+        transition: all $transition;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px; /* Ensures uniform height */
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+          max-width: 60px;
+          margin-bottom: $padding-small;
+        }
+
+        h3 {
+          font-size: $font-size-medium;
+          color: $text-color;
+          margin-bottom: $padding-small;
+        }
+
+        p {
+          font-size: $font-size-small;
+          color: $text-secondary-color;
+          margin: 0 $padding-small; /* Ensures the text doesn't touch the edges */
+        }
+      }
+    }
+  }
+
+  // Media Queries for Responsive Design
+
+  @media (max-width: $breakpoint-mobile) {
+    .container {
+      .services {
+        .service {
+          flex: 1 1 calc(100% - 20px);
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile + 1) and (max-width: $breakpoint-tablet) {
+    .container {
+      .services {
+        .service {
+          flex: 1 1 calc(50% - 20px);
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    .container {
+      .services {
+        flex-wrap: nowrap;
+
+        .service {
+          flex: 1 1 22%;
+          margin: $padding-small $padding-small $padding-small 0;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// Font Imports
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@400;700&display=swap');
+
+// Fonts
+$font-family: 'Poppins', sans-serif;
+$heading-font: 'Volkhov', serif;
+
+// Colors
+$primary-color: #DF6951;
+$secondary-color: #F1A501;
+$background-color: #fff;
+$background-color-light: #f9f9f9;
+$text-color: #333;
+$text-secondary-color: #5E6282;
+$hover-color: darken($primary-color, 10%);
+
+// Font Sizes
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 24px;
+$font-size-xlarge: 30px;
+$font-size-xxlarge: 40px;
+
+// Padding
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 30px;
+$padding-xlarge: 50px;
+
+// Border Radius
+$border-radius: 5px;
+
+// Transitions
+$transition: 0.3s ease-in-out;
+
+// Container
+$container-max-width: 1200px;
+
+// Media Queries
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1200px;
